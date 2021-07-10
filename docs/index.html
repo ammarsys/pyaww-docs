@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.9.2" />
 <title>pyaww API documentation</title>
-<meta name="description" content="text" />
+<meta name="description" content="pyaww …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,19 +22,77 @@
 <h1 class="title">Package <code>pyaww</code></h1>
 </header>
 <section id="section-intro">
-<p>text</p>
+<h1 id="pyaww">pyaww</h1>
+<p>An API wrapper around the pythonanywhere's API. The name stands for <code>py</code>thon<code>a</code>ny<code>w</code>here<code>w</code>rapper.</p>
+<ul>
+<li>100% API coverage</li>
+<li>Most of the codebase is documented &amp; typehinted</li>
+<li>Maintained</li>
+</ul>
+<p><a href="https://www.python.org/"><img alt="made-with-python" src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg"></a></p>
+<p><a href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a></p>
+<h1 id="quick-start">Quick-start</h1>
+<pre><code class="language-py"># import the module
+from pyaww.user import User
+
+# construct the user class
+client = User(auth='...', username='...')
+
+for console in client.consoles():
+    print(console.name)
+</code></pre>
+<p>PyPi: <a href="https://pypi.org/project/pyaww">https://pypi.org/project/pyaww</a></p>
+<h1 id="installation">Installation</h1>
+<pre><code class="language-py"># Linux/MacOS
+python3 -m pip install pyaww
+
+# Windows
+py -m pip install pyaww
+</code></pre>
+<p>For the dev version, do:</p>
+<pre><code>git clone https://github.com/ammarsys/pyaww
+cd pyaww
+</code></pre>
+<h1 id="faq">FAQ</h1>
+<h3 id="how-do-i-get-my-accounts-api-token">How do I get my accounts API token?</h3>
+<ul>
+<li>Head over to <a href="https://www.pythonanywhere.com/account/#api_token,">https://www.pythonanywhere.com/account/#api_token,</a> and you should be able to find it.</li>
+</ul>
+<h3 id="i-have-an-issue-where-can-i-recieve-help">I have an issue, where can I recieve help?</h3>
+<ul>
+<li>Please open an issue over <a href="https://github.com/ammarsys/pyaww/issues">here</a>.</li>
+</ul>
+<h3 id="are-there-any-examples">Are there any examples?</h3>
+<ul>
+<li>Yes! See <a href="https://github.com/ammarsys/pyaww/tree/main/recipes">this</a> directory.</li>
+</ul>
+<h3 id="how-do-i-contribute">How do I contribute?</h3>
+<ul>
+<li>To make a code change, make a fork of this repository, edit it and make a pull request. Make sure to follow PEP8 and document your code.</li>
+</ul>
+<h3 id="how-to-use-this-module-in-an-async-enviorment">How to use this module in an async enviorment?</h3>
+<ul>
+<li>Look into <a href="https://pypi.org/project/aioify/">this</a> library.</li>
+</ul>
+<h3 id="where-are-the-documentations">Where are the documentations?</h3>
+<ul>
+<li>Over <a href="https://ammarsys.github.io/pyaww-docs/">here</a>.</li>
+</ul>
+<h3 id="how-to-manually-construct-a-class">How to manually construct a class?</h3>
+<ul>
+<li>Import the class (such as pyaww.file) and pass following things File({&hellip;}, client). The dots inside the dictionary represent class variables.</li>
+</ul>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34;
-<p>
 # pyaww
 
-An API wrapper around the pythonanywhere's API. The name stands for `py`thon`a`ny`w`here`w`rapper.
+An API wrapper around the pythonanywhere&#39;s API. The name stands for `py`thon`a`ny`w`here`w`rapper.
 
 - 100% API coverage
-- Most of the codebase is documented & typehinted
+- Most of the codebase is documented &amp; typehinted
 - Maintained
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
@@ -47,14 +105,13 @@ An API wrapper around the pythonanywhere's API. The name stands for `py`thon`a`n
 from pyaww.user import User
 
 # construct the user class
-client = User(auth='...', username='...')
+client = User(auth=&#39;...&#39;, username=&#39;...&#39;)
 
 for console in client.consoles():
     print(console.name)
 ```
 
-Please look at the documentations: https://ammarsys.github.io/pyaww-docs/
-
+PyPi: https://pypi.org/project/pyaww
 # Installation
 
 ```py
@@ -92,7 +149,7 @@ cd pyaww
 
 ### How to manually construct a class?
  - Import the class (such as pyaww.file) and pass following things File({...}, client). The dots inside the dictionary represent class variables.
-</p>
+
 &#34;&#34;&#34;
 
 from pyaww import (
@@ -156,7 +213,21 @@ __version__ = &#39;0.0.2&#39;</code></pre>
 <nav id="sidebar">
 <h1>Index</h1>
 <div class="toc">
-<ul></ul>
+<ul>
+<li><a href="#pyaww">pyaww</a></li>
+<li><a href="#quick-start">Quick-start</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#faq">FAQ</a><ul>
+<li><a href="#how-do-i-get-my-accounts-api-token">How do I get my accounts API token?</a></li>
+<li><a href="#i-have-an-issue-where-can-i-recieve-help">I have an issue, where can I recieve help?</a></li>
+<li><a href="#are-there-any-examples">Are there any examples?</a></li>
+<li><a href="#how-do-i-contribute">How do I contribute?</a></li>
+<li><a href="#how-to-use-this-module-in-an-async-enviorment">How to use this module in an async enviorment?</a></li>
+<li><a href="#where-are-the-documentations">Where are the documentations?</a></li>
+<li><a href="#how-to-manually-construct-a-class">How to manually construct a class?</a></li>
+</ul>
+</li>
+</ul>
 </div>
 <ul id="index">
 <li><h3><a href="#header-submodules">Sub-modules</a></h3>
